@@ -12,7 +12,7 @@ class UserController extends Controller
 
     public function indexAction()
     {
-        if ($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY') or $this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
+        if ($this->isGranted('IS_AUTHENTICATED_FULLY') or $this->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             return $this->forward('FOSUserBundle:Profile:show');
         }
 
@@ -63,9 +63,7 @@ class UserController extends Controller
 
         $this->get('cms.breadcrumbs')->add('register', 'Регистрация');
 
-        if ($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY') or
-            $this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_REMEMBERED')
-        ) {
+        if ($this->isGranted('IS_AUTHENTICATED_FULLY') or $this->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             return new RedirectResponse($this->generateUrl('fos_user_profile_show'));
         }
 
