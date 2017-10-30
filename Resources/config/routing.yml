@@ -2,12 +2,12 @@
 smart_module.user.index:
     path: /
     defaults:
-        _controller: UserModule:User:index
+        _controller: UserModuleBundle:User:index
 
 smart_module.user.edit:
     path: /edit
     defaults:
-        _controller: UserModule:User:edit
+        _controller: UserModuleBundle:User:edit
 
 #smart_module.user.login:
 #    path: /login
@@ -17,13 +17,13 @@ smart_module.user.edit:
 smart_module.user.change-password:
     path: /change-password
     defaults:
-        _controller: UserModule:User:changePassword
+        _controller: UserModuleBundle:User:changePassword
 
 # Resetting password
 smart_module.user.resetting:
     path: /resetting/
     defaults:
-        _controller: UserModule:User:resettingRequest
+        _controller: UserModuleBundle:User:resettingRequest
 
 smart_module.user.resetting.send-email:
     path: /resetting/send-email
@@ -44,12 +44,12 @@ smart_module.user.resetting.reset:
 smart_module.user.registration:
     path: /register/
     defaults:
-        _controller: UserModule:User:register
+        _controller: UserModuleBundle:User:register
 
 smart_module.user.registration.check-email:
     path: /register/check-email
     defaults:
-        _controller: UserModule:User:registerCheckEmail
+        _controller: UserModuleBundle:User:registerCheckEmail
 
 smart_module.user.registration.confirm:
     path: /register/confirm/{token}
